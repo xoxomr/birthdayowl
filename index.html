@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      text-align: center;
+    }
+    .message {
+      font-size: 24px;
+      color: #333;
+    }
+    .link {
+      display: block;
+      margin-top: 15px;
+      font-size: 18px;
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Android check
+      if (/android/i.test(userAgent)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.app.birthdayOwl";
+      }
+      // iOS check (including Mac with touch)
+      else if (/iPad|iPhone|iPod/.test(userAgent) || 
+               (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+        window.location.href = "https://apps.apple.com/ca/app/birthday-owl/id6757141079";
+      }
+      // Others
+      else {
+        window.location.href = "https://www.brightleeenterprise.com/";
+      }
+    };
+  </script>
+</head>
+<body>
+  <div>
+    <div class="message">Redirecting...</div>
+    <a class="link" href="https://www.brightleeenterprise.com/">If you're not redirected, click here</a>
+  </div>
+</body>
+</html>
